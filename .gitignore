@@ -1,2 +1,4 @@
 node_modeles
 .env.local
+.vercel
+.package-lock.json
