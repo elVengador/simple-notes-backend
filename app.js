@@ -15,11 +15,11 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 app.set("PORT", 4000 || process.env.PORT);
 
 // routes
-app.use("", (req, res) => res.send(ENDPOINT_TEMPLATE));
 app.use("/api/v1/auth", require("./routes/auth.routes"));
 app.use("/api/v1/user", require("./routes/user.routes"));
 app.use("/api/v1/tag", require("./routes/tag.routes"));
 app.use("/api/v1/note", require("./routes/note.routes"));
+app.use("/", (req, res) => res.send(ENDPOINT_TEMPLATE));
 
 // middlewares
 module.exports = app;
