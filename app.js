@@ -7,7 +7,13 @@ require("./auth");
 // initializarion
 const app = express();
 
-app.use(cors({origin: process.env.ALLOW_ORIGIN}));
+app.use(cors({
+    // origin: process.env.ALLOW_ORIGIN
+    origin: true, // Enable CORS for all origins
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Enable credentials (cookies, authorization headers, etc.)
+    optionsSuccessStatus: 204, // Respond with a 204 status for OPTIONS requests
+}));
 app.use(express.json()); //h for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
