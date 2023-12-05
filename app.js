@@ -22,6 +22,8 @@ app.use("/api/v1/tag", require("./routes/tag.routes"));
 app.use("/api/v1/note", require("./routes/note.routes"));
 app.use("/", (req, res) => res.send(ENDPOINT_TEMPLATE));
 
+app.listen(port=>console.log(`server running on: ${port}`))
+
 // middlewares
 module.exports = app;
 
