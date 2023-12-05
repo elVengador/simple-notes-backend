@@ -11,6 +11,7 @@ app.use(cors({origin: process.env.ALLOW_ORIGIN}));
 app.use(express.json()); //h for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+console.log({tt:process.env.ALLOW_ORIGIN})
 // globals
 app.set("PORT", 4000 || process.env.PORT);
 
