@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 
 console.log({tt:process.env.ALLOW_ORIGIN})
 // globals
-app.set("PORT", 4000 || process.env.PORT);
+app.set("PORT",process.env.PORT ||  4000 );
 
 // routes
 app.use("/api/v1/auth", require("./routes/auth.routes"));
