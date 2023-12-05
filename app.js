@@ -17,6 +17,16 @@ app.use(cors({
 app.use(express.json()); //h for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+// Handle CORS preflight requests
+app.options('/api/*', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+    res.header('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.send();
+});
+
+
 console.log({tt:process.env.ALLOW_ORIGIN})
 // globals
 app.set("PORT",process.env.PORT ||  4000 );
