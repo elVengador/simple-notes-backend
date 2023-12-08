@@ -32,6 +32,6 @@ const ENDPOINT_TEMPLATE =  `
         "
     >
         <style> body { margin:0px } </style>
-        <h1>Simple notes app api 🚀</h1>
+        <h1>Simple notes api 🚀</h1>
     </main>
 `;
